@@ -74,5 +74,11 @@
 
 	<!-- <CompanySelect companyList="test,test2,test3,test4" /> -->
 
-	<div><button>Submit</button></div>
+	<div>
+		<button
+			class="rounded border-2"
+			style="border-color: #3ba2d7; background-color: #3ba2d7; color: white; padding: 10px 10px;"
+			>Submit</button
+		>
+	</div>
 </form>
