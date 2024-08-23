@@ -28,7 +28,7 @@
 	</button>
 </div>
 
-<div class="bg-gray-700">
+<div class="bg-black-700">
 	<h2 class="">Options</h2>
 	<Switch label="Event lock" bind:value={lock_event} design="slider" />
 	<Switch label="Student level weight" bind:value={lock_event} design="slider" />
@@ -102,7 +102,7 @@
 </div>
 
 <div class="mt-5 flex justify-around">
-	<button class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">
+	<button class="rounded-full bg-blue-500 px-20 py-10 font-bold text-white hover:bg-blue-700">
 		SushSort
 	</button>
 </div>
