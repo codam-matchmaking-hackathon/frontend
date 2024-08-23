@@ -4,17 +4,16 @@
 	export let event: EventRow;
 </script>
 
-<div class="rounded-lg bg-gray-500 p-5">
-	<h2 class="text-lg font-bold">{event.name}</h2>
-	<p class="mt-2">Date: {event.date}</p>
-	<div class="flex justify-end mt-4">
+<div class="flex justify-between gap-4 rounded-lg bg-gray-500 p-5">
+	<div>
+		<h2 class="text-lg font-bold">{event.name}</h2>
+		<p class="mt-2">{event.date}</p>
+	</div>
+	<div class="mt-4 flex flex-col">
 		<a
 			href="/event/{event.id}"
-			class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700">Event details</a
-		>
-		<a
-			href="/userForm/{event.id}"
-			class="rounded bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-700 ml-2">Form</a
+			class="hover:bg-codam-orange bg-codam-orange rounded px-4 py-2 font-bold text-white"
+			>Event details</a
 		>
 	</div>
 </div>

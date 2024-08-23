@@ -3,7 +3,11 @@
 	import type { PageData } from './$types';
 	import UserRow from '$components/UserRow.svelte';
 	import { Lock, ArrowLeft } from 'lucide-svelte';
+	import Switch from '$components/Switch.svelte';
 	export let data: PageData;
+
+	let lock_event;
+	let student_level_sort;
 </script>
 
 <div class="mb-2.5 flex justify-around">
@@ -22,6 +26,12 @@
 		<Lock class="inline-block h-4 w-4" />
 		Lock event
 	</button>
+</div>
+
+<div class="bg-gray-700">
+	<h2 class="">Options</h2>
+	<Switch label="Event lock" bind:value={lock_event} design="slider" />
+	<Switch label="Student level weight" bind:value={lock_event} design="slider" />
 </div>
 
 <div class="flex gap-2.5">

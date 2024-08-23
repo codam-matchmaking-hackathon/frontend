@@ -63,5 +63,7 @@
 	<input type="hidden" name="company_list" value={$form.company_list} />
 	<input type="hidden" name="event_id" value={$page.params.eventId} />
 
+	<!-- <CompanySelect companyList="test,test2,test3,test4" /> -->
+
 	<div><button>Submit</button></div>
 </form>

@@ -4,11 +4,12 @@ import { userForm, userFormInsert } from '$lib/server/db/schema';
 import { message } from 'sveltekit-superforms';
 import { fail } from '@sveltejs/kit';
 import { db } from '$lib/server/db';
+import { eq } from 'drizzle-orm';
 
 export const load = (async ({ params }) => {
 	const form = await superValidate(zod(userFormInsert));
-
-	return { form, params };
+	const companyForms = await db.select().from(userForm).where(eq(userForm.event_id, params.eventId));
+	return { form, params, companyForms };
 });
 
 export const actions = {

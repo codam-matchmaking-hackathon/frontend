@@ -11,7 +11,7 @@
 
 <section>
 	{#if data.events}
-		<div class="grid grid-cols-2 grid-rows-2 gap-2">
+		<div class="flex flex-col gap-2">
 			{#each data.events as event}
 				<Event {event} />
 			{/each}
