@@ -2,9 +2,10 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import '@fontsource/fira-mono';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 :root {
-	--font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+	--font-body: 'Inter', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
 	--color-bg-0: rgb(202, 216, 228);
@@ -25,22 +26,40 @@ body {
 	background-attachment: fixed;
 	background-color: var(--color-bg-1);
 	background-size: 100vw 100vh;
-	background-image: radial-gradient(
-			50% 50% at 50% 50%,
+	background-image: radial-gradient(50% 50% at 50% 50%,
 			rgba(255, 255, 255, 0.75) 0%,
-			rgba(255, 255, 255, 0) 100%
-		),
+			rgba(255, 255, 255, 0) 100%),
 		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
 }
 
-h1,
-h2,
-p {
-	font-weight: 400;
+h1 {
+	font-size: 2rem;
+	font-weight: 800;
+	text-align: center;
+	color: var(--color-text);
+	/* Use the custom property for text color */
+}
+
+h2 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: var(--color-text);
+	/* Use the custom property for text color */
+}
+
+h3 {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: var(--color-text);
+	/* Use the custom property for text color */
 }
 
 p {
 	line-height: 1.5;
+	font-weight: 400;
+	font-size: 1rem;
+	color: var(--color-text);
+	/* Use the custom property for text color */
 }
 
 a {
@@ -50,15 +69,6 @@ a {
 
 a:hover {
 	text-decoration: underline;
-}
-
-h1 {
-	font-size: 2rem;
-	text-align: center;
-}
-
-h2 {
-	font-size: 1rem;
 }
 
 pre {
@@ -94,6 +104,13 @@ button:focus:not(:focus-visible) {
 @media (min-width: 720px) {
 	h1 {
 		font-size: 2.4rem;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-text: rgba(255, 255, 255, 0.9);
+		/* Text color for dark mode */
 	}
 }
 
