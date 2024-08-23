@@ -12,7 +12,7 @@
 	<div class="mt-4 flex flex-col">
 		<a
 			href="/event/{event.id}"
-			class="hover:bg-codam-orange bg-codam-orange rounded px-4 py-2 font-bold text-white"
+			class="rounded bg-codam-orange px-4 py-2 font-bold text-white hover:bg-codam-orange"
 			>Event details</a
 		>
 	</div>

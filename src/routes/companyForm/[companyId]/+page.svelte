@@ -3,6 +3,7 @@
 	import FormError from '$components/FormError.svelte';
 	import { superForm } from 'sveltekit-superforms';
 	import SuperDebug from 'sveltekit-superforms';
+	import { ArrowLeft } from 'lucide-svelte';
 
 	export let data;
 
@@ -10,11 +11,18 @@
 </script>
 
 <h1>test company form {data.params.companyId}</h1>
-<h2>H2 typeface</h2>
-<h3>H3 typeface</h3>
-<p>paragraphc typeface</p>
+
 <br />
-<p>FORMFIELD BELOW</p>
+<div class="flex justify-around">
+	<button
+		on:click={() => history.back()}
+		class="flex items-center gap-1 rounded-lg bg-gray-300 px-4 py-2 font-bold text-gray-700 hover:bg-gray-400 hover:text-gray-900"
+	>
+		<ArrowLeft class="inline-block h-4 w-4" /> Back
+	</button>
+</div>
+
+<p>Company Formfield</p>
 
 <SuperDebug data={$form} />
 

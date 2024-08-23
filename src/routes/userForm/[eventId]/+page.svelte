@@ -3,16 +3,25 @@
 	import FormError from '$components/FormError.svelte';
 	import { superForm } from 'sveltekit-superforms';
 	import SuperDebug from 'sveltekit-superforms';
-
+	import { ArrowLeft } from 'lucide-svelte';
 	export let data;
 
 	const { form, errors, enhance } = superForm(data.form);
 	$form.company_list = ['42', 'WeThinkCode', 'Wethinkcode_'].toString();
 </script>
 
-<SuperDebug data={$form} />
+<div class="flex justify-around">
+	<button
+		on:click={() => history.back()}
+		class="flex items-center gap-1 rounded-lg bg-gray-300 px-4 py-2 font-bold text-gray-700 hover:bg-gray-400 hover:text-gray-900"
+	>
+		<ArrowLeft class="inline-block h-4 w-4" /> Back
+	</button>
+	<h1 class="text-2xl font-bold">User form</h1>
+	<div></div>
+</div>
 
-<h1 class="text-2xl font-bold">User form</h1>
+<SuperDebug data={$form} />
 
 <form method="POST" class="mt-5 flex flex-col" use:enhance>
 	<label class="mb-2 block text-sm font-bold text-gray-700" for="firstName">First name</label>

@@ -8,8 +8,8 @@ import { eq } from 'drizzle-orm';
 
 export const load = (async ({ params }) => {
 	const form = await superValidate(zod(userFormInsert));
-//	const CompanyForm = await db.select().from(userForm).where(eq(userForm.event_id, params.eventId));
-// ^^ voor het sorteren van de lijst van companies
+	const userForms = await db.select().from(userForm).where(eq(userForm.event_id, params.eventId));
+
 	return { form, params, userForms };
 });
 
