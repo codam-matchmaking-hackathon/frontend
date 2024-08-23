@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import FormError from '$components/FormError.svelte';
 	import { superForm } from 'sveltekit-superforms';
 	import SuperDebug from 'sveltekit-superforms';
@@ -6,10 +7,12 @@
 	export let data;
 
 	const { form, errors, enhance } = superForm(data.form);
-	$form.company_list = ['42', 'WeThinkCode', 'Wethinkcode_'];
+	$form.company_list = ['42', 'WeThinkCode', 'Wethinkcode_'].toString();
 </script>
 
 <SuperDebug data={$form} />
+
+<h1 class="text-2xl font-bold">User form</h1>
 
 <form method="POST" class="mt-5 flex flex-col" use:enhance>
 	<label class="mb-2 block text-sm font-bold text-gray-700" for="firstName">First name</label>
@@ -56,6 +59,9 @@
 		bind:value={$form.pitch}
 	/>
 	<FormError error={$errors.pitch} />
+
+	<input type="hidden" name="company_list" value={$form.company_list} />
+	<input type="hidden" name="event_id" value={$page.params.eventId} />
 
 	<div><button>Submit</button></div>
 </form>

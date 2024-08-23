@@ -1,14 +1,8 @@
 <script lang="ts">
-	import type { LayoutData } from './$types';
-	import Header from '$components/Header.svelte';
 	import '../app.css';
-
-	export let data: LayoutData;
 </script>
 
-<div class="app">
-	<Header></Header>
-
+<div class="app dark:bg-gray-900">
 	<main>
 		<slot />
 	</main>
@@ -30,23 +24,5 @@
 		max-width: 64rem;
 		margin: 0 auto;
 		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
 	}
 </style>

@@ -11,9 +11,11 @@
 
 <section>
 	{#if data.events}
-		{#each data.events as event}
-			<Event {event} />
-		{/each}
+		<div class="grid grid-cols-2 grid-rows-2 gap-2">
+			{#each data.events as event}
+				<Event {event} />
+			{/each}
+		</div>
 	{/if}
 </section>
 

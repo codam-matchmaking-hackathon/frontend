@@ -10,6 +10,14 @@ export const event = pgTable('event', {
 	date: date('date').notNull(),
 });
 
+export const EventSelect = createSelectSchema(event, {
+	id: z.string().min(1).max(255),
+	name: z.string().min(1).max(255),
+	date: z.string().min(1).max(255),
+});
+
+export type EventRow = z.infer<typeof EventSelect>;
+
 export const userForm = pgTable('user', {
 	id: text('id').primaryKey().$defaultFn(() => createId()),
 	firstName: text('name').notNull(),
@@ -31,6 +39,10 @@ export const userFormInsert = createInsertSchema(userForm, {
 	pitch: z.string().min(1).max(255),
 });
 
+export const UserFormSelect = createSelectSchema(userForm);
+
+export type UserFormRow = z.infer<typeof UserFormSelect>;
+
 export const companyForm = pgTable('company', {
 	id: text('id').primaryKey().$defaultFn(() => createId()),
 	accepted: boolean('accepted').notNull().default(false),
@@ -47,3 +59,17 @@ export const companyForm = pgTable('company', {
 	// reference an event
 	event_id: text('event_id').notNull().references(() => event.id),
 });
+
+export const companyFormInsert = createInsertSchema(companyForm, {
+	accepted: z.boolean().default(false),
+	name: z.string().min(1).max(255),
+	description: z.string().min(1).max(255),
+	tech_stack: z.string().min(1).max(255),
+	emp_name: z.string().min(1).max(255),
+	emp_email: z.string().min(1).max(255),
+	emp_phone: z.string().min(1).max(255),
+});
+
+export const CompanyFormSelect = createSelectSchema(companyForm);
+
+export type CompanyFormRow = z.infer<typeof CompanyFormSelect>;

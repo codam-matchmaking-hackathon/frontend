@@ -47,6 +47,7 @@
 		"@auth/sveltekit": "^1.4.2",
 		"@paralleldrive/cuid2": "^2.2.2",
 		"drizzle-orm": "^0.31.4",
+		"lucide-svelte": "^0.433.0",
 		"postgres": "^3.4.4",
 		"swapy": "^0.1.1"
 	}
